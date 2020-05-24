@@ -1,4 +1,7 @@
 import { GenericController } from "./generic.controller";
-import app from "../app";
+import { Application } from "express";
+import { TABLE_USER } from "../models/constaint";
 
-new GenericController(app, "user", "user");
+export const controllers = (app:Application) => [
+  new GenericController(app, TABLE_USER, '/user')
+]

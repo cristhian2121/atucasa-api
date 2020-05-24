@@ -9,6 +9,7 @@ class App {
   constructor() {
     this.app = express();
     this.setConfig();
+    this.initControllers()
   }
 
   private setConfig() {
@@ -23,9 +24,9 @@ class App {
   }
 
   initControllers() {
-    controllers.forEach(controller => {
-    })
+    controllers(this.app);
   }
+  
 }
 
 export default new App().app;
